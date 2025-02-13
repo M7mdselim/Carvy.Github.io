@@ -37,7 +37,7 @@ export default function Navbar() {
               <div className="flex">
                 <div className="flex flex-shrink-0 items-center">
                   <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
-                    AutoParts
+                    Carvy
                   </Link>
                 </div>
                 <div className="hidden sm:ml-10 sm:flex sm:space-x-8">

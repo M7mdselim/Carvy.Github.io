@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
-              AutoParts
+              Carvy
             </Link>
             <p className="text-gray-500 text-sm">
               Your one-stop shop for quality auto parts and accessories.
@@ -71,7 +71,7 @@ export default function Footer() {
         
         <div className="mt-8 pt-8 border-t border-gray-100">
           <p className="text-gray-400 text-sm text-center">
-            © {new Date().getFullYear()} AutoParts. All rights reserved.
+            © {new Date().getFullYear()} Carvy. All rights reserved.
           </p>
         </div>
       </div>
