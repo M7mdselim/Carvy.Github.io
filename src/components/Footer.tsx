@@ -10,7 +10,7 @@ export default function Footer() {
               Carvy
             </Link>
             <p className="text-gray-500 text-sm">
-              Your one-stop shop for quality auto parts and accessories.
+              Your one-stop shop for quality auto parts and accessories in Egypt.
             </p>
           </div>
           

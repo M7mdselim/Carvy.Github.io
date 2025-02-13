@@ -12,6 +12,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import SearchResults from './pages/SearchResults'
 import { useAuth } from './hooks/useAuth'
+import Checkout from './pages/Checkout'
 
 export default function App() {
   const { initialize } = useAuth()
@@ -26,7 +27,7 @@ export default function App() {
         <Navbar />
         <main className="flex-grow">
           <Routes>
-            <Route path="/Carvy" element={<Home />} />
+            <Route path="/Carvy/" element={<Home />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/categories/:categoryId" element={<CategoryShops />} />
             <Route path="/shops" element={<Shops />} />
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/search" element={<SearchResults />} />
           </Routes>
         </main>

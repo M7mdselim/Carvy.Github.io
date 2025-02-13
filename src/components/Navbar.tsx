@@ -179,7 +179,18 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-              <div className="-mr-2 flex items-center sm:hidden">
+              <div className="flex items-center sm:hidden space-x-4">
+                <Link 
+                  to="/cart" 
+                  className="relative p-2 text-gray-600"
+                >
+                  <ShoppingCartIcon className="h-6 w-6" />
+                  {cartItemCount > 0 && (
+                    <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-indigo-600 text-xs font-bold text-white ring-2 ring-white">
+                      {cartItemCount}
+                    </span>
+                  )}
+                </Link>
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -209,6 +220,25 @@ export default function Navbar() {
                   {item.name}
                 </Disclosure.Button>
               ))}
+              {cartItemCount > 0 && (
+                <div className="px-4 py-3 bg-gray-50">
+                  <div className="text-sm font-medium text-gray-900 mb-2">Cart Summary</div>
+                  <div className="space-y-2">
+                    {items.map(item => (
+                      <div key={item.product.id} className="flex justify-between text-sm">
+                        <span className="text-gray-600 truncate">{item.product.name}</span>
+                        <span className="text-gray-900">x{item.quantity}</span>
+                      </div>
+                    ))}
+                    <div className="pt-2 border-t border-gray-200">
+                      <div className="flex justify-between font-medium">
+                        <span>Total:</span>
+                        <span className="text-indigo-600">${total.toFixed(2)}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
             {user ? (
               <div className="border-t border-gray-200 pb-3 pt-4">
