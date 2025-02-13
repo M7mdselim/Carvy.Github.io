@@ -41,6 +41,70 @@ export default function Checkout() {
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-5">
+
+ {/* Order Summary */}
+ <div className="lg:col-span-2">
+            <div className="bg-white p-8 rounded-lg shadow sticky top-8">
+              <h2 className="text-2xl font-semibold mb-6">Order Summary</h2>
+              <div className="flow-root">
+                <ul className="-my-4 divide-y divide-gray-200">
+                  {items.map(({ product, quantity }) => (
+                    <li key={product.id} className="flex py-4">
+                      <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="ml-4 flex flex-1 flex-col">
+                        <div>
+                          <div className="flex justify-between text-base font-medium text-gray-900">
+                            <h3>{product.name}</h3>
+                            <p className="ml-4">${(product.price * quantity).toFixed(2)}</p>
+                          </div>
+                        </div>
+                        <div className="flex flex-1 items-end justify-between text-sm">
+                          <p className="text-gray-500">Qty {quantity}</p>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-6 space-y-4">
+                <div className="flex items-center justify-between border-t border-gray-200 pt-4">
+                  <div className="text-base font-medium text-gray-900">Subtotal</div>
+                  <div className="text-base font-medium text-gray-900">${total.toFixed(2)}</div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="text-base font-medium text-gray-900">Shipping</div>
+                  <div className="text-base font-medium text-gray-900">$70.00</div>
+                </div>
+                <div className="flex items-center justify-between border-t border-gray-200 pt-4">
+                  <div className="text-lg font-semibold text-gray-900">Total</div>
+                  <div className="text-lg font-semibold text-gray-900">
+                    ${(total + 70.00).toFixed(2)}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 space-y-4">
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <Shield className="h-5 w-5 text-gray-400" />
+                  <span>Secure checkout with SSL encryption</span>
+                </div>
+                
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CreditCard className="h-5 w-5 text-gray-400" />
+                  <span>All major credit cards accepted</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
          {/* Checkout Form */}
          <div className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="space-y-8">
@@ -218,67 +282,7 @@ export default function Checkout() {
             </form>
           </div>
 
-          {/* Order Summary */}
-          <div className="lg:col-span-2">
-            <div className="bg-white p-8 rounded-lg shadow sticky top-8">
-              <h2 className="text-2xl font-semibold mb-6">Order Summary</h2>
-              <div className="flow-root">
-                <ul className="-my-4 divide-y divide-gray-200">
-                  {items.map(({ product, quantity }) => (
-                    <li key={product.id} className="flex py-4">
-                      <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="h-full w-full object-cover object-center"
-                        />
-                      </div>
-                      <div className="ml-4 flex flex-1 flex-col">
-                        <div>
-                          <div className="flex justify-between text-base font-medium text-gray-900">
-                            <h3>{product.name}</h3>
-                            <p className="ml-4">${(product.price * quantity).toFixed(2)}</p>
-                          </div>
-                        </div>
-                        <div className="flex flex-1 items-end justify-between text-sm">
-                          <p className="text-gray-500">Qty {quantity}</p>
-                        </div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-6 space-y-4">
-                <div className="flex items-center justify-between border-t border-gray-200 pt-4">
-                  <div className="text-base font-medium text-gray-900">Subtotal</div>
-                  <div className="text-base font-medium text-gray-900">${total.toFixed(2)}</div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="text-base font-medium text-gray-900">Shipping</div>
-                  <div className="text-base font-medium text-gray-900">$70.00</div>
-                </div>
-                <div className="flex items-center justify-between border-t border-gray-200 pt-4">
-                  <div className="text-lg font-semibold text-gray-900">Total</div>
-                  <div className="text-lg font-semibold text-gray-900">
-                    ${(total + 70.00).toFixed(2)}
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 space-y-4">
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <Shield className="h-5 w-5 text-gray-400" />
-                  <span>Secure checkout with SSL encryption</span>
-                </div>
-                
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <CreditCard className="h-5 w-5 text-gray-400" />
-                  <span>All major credit cards accepted</span>
-                </div>
-              </div>
-            </div>
-          </div>
+         
         </div>
       </div>
     </div>
