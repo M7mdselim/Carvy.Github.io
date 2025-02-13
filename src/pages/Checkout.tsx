@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../hooks/useCart'
-import { CreditCard, Truck, Shield } from 'lucide-react'
+import { CreditCard, Shield } from 'lucide-react'
 
 export default function Checkout() {
   const { items, total } = useCart()
