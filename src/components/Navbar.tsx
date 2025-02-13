@@ -16,7 +16,7 @@ export default function Navbar() {
   const cartItemCount = items.reduce((sum, item) => sum + item.quantity, 0)
 
   const navigation = [
-    { name: 'Home', href: '/Carvy' },
+    { name: 'Home', href: '/Carvy/' },
     { name: 'Models', href: '/categories' },
     { name: 'Shops', href: '/shops' },
   ]
@@ -36,7 +36,7 @@ export default function Navbar() {
             <div className="flex h-20 justify-between">
               <div className="flex">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link to="/Carvy" className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
+                  <Link to="/Carvy/" className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
                     Carvy
                   </Link>
                 </div>
