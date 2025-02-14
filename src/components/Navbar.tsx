@@ -220,25 +220,7 @@ export default function Navbar() {
                   {item.name}
                 </Disclosure.Button>
               ))}
-              {cartItemCount > 0 && (
-                <div className="px-4 py-3 bg-gray-50">
-                  <div className="text-sm font-medium text-gray-900 mb-2">Cart Summary</div>
-                  <div className="space-y-2">
-                    {items.map(item => (
-                      <div key={item.product.id} className="flex justify-between text-sm">
-                        <span className="text-gray-600 truncate">{item.product.name}</span>
-                        <span className="text-gray-900">x{item.quantity}</span>
-                      </div>
-                    ))}
-                    <div className="pt-2 border-t border-gray-200">
-                      <div className="flex justify-between font-medium">
-                        <span>Total:</span>
-                        <span className="text-indigo-600">${total.toFixed(2)}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
+              
             </div>
             {user ? (
               <div className="border-t border-gray-200 pb-3 pt-4">

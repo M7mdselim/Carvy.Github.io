@@ -97,7 +97,7 @@ export default function Cart() {
             <p>
               or{' '}
               <Link
-                to="/"
+                to="/Carvy/"
                 className="text-indigo-600 font-medium hover:text-indigo-500"
               >
                 Continue Shopping<span aria-hidden="true"> &rarr;</span>
